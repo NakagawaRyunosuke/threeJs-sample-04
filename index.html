@@ -12,15 +12,15 @@
     <button id="btn">↑</button>
     <script>
       // ページの読み込みを待つ
-      window.addEventListener('DOMContentLoaded', init);
       let x = 0;
+      window.addEventListener('DOMContentLoaded', init(x));
+      
 
         document.getElementById("btn").addEventListener("click",function(){
             x += 0.5;
-            console.log(x)
         });
 
-      function init() {
+      function init(x) {
         // サイズを指定
         const width = 800
         const height = 600;
@@ -80,9 +80,9 @@
           const material = new THREE.SpriteMaterial({ map: texture,});
           const sprite = new THREE.Sprite(material);
           // ランダムな座標に配置
-          sprite.position.x = 2 * (Math.random() - 0.5);
+          sprite.position.x = 5 * (Math.random() - 0.5);
           sprite.position.y = 0;
-          sprite.position.z = 2 * (Math.random() - 0.5);
+          sprite.position.z = 5 * (Math.random() - 0.5);
           // スケールを調整
           sprite.scale.set(1, 1, 1);
 
@@ -95,9 +95,9 @@
             const eyeTexture = textureLoader.load("img/eye.png");
             const eyeMaterial = new THREE.SpriteMaterial( {map: eyeTexture} );
             const sphere = new THREE.Sprite( eyeMaterial );
-            sphere.position.x = 1.5 * (Math.random() - 0.5); 
+            sphere.position.x = 3.5 * (Math.random() - 0.5); 
             sphere.position.y = (Math.random() * 0.5);
-            sphere.position.z = 1.5 * (Math.random() - 0.5);
+            sphere.position.z = 3.5 * (Math.random() - 0.5);
             sphere.scale.set(0.25,0.25,0.25);
             scene.add( sphere );
         }
