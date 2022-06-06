@@ -12,15 +12,15 @@
     <button id="btn">↑</button>
     <script>
       // ページの読み込みを待つ
-      let x = 0;
+      let z = 5;
       window.addEventListener('DOMContentLoaded', init(x));
       
 
         document.getElementById("btn").addEventListener("click",function(){
-            x += 0.5;
+            z -= 0.5;
         });
 
-      function init(x) {
+      function init(z) {
         // サイズを指定
         const width = 800
         const height = 600;
@@ -39,7 +39,7 @@
         // カメラを作成
         const camera = new THREE.PerspectiveCamera(45, width / height);
         // カメラの初期座標を設定
-        camera.position.set(x, 0, 1);
+        camera.position.set(0, 0, z);
 
         // カメラコントローラーを作成
         const controls = new THREE.OrbitControls(camera, document.body); 
