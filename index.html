@@ -80,25 +80,25 @@
         const wallGeometry = new THREE.BoxGeometry(1,2,1);
         const wallMaterial = new THREE.MeshLambertMaterial({map:wallTexture,side:THREE.DoubleSide});
         const wall1 = new THREE.Mesh(wallGeometry,wallMaterial);
-        wall1.scale.set(3,2,0.3);
-        wall1.position.set(-3.5,1.5,0);
+        wall1.scale.set(3,1.5,0.3);
+        wall1.position.set(-3.5,1,0);
         scene.add(wall1);
 
         const wall2 = new THREE.Mesh(wallGeometry,wallMaterial);
-        wall2.scale.set(3,2,0.3);
-        wall2.position.set(3.5,1.5,0);
+        wall2.scale.set(3,1.5,0.3);
+        wall2.position.set(3.5,1,0);
         scene.add(wall2);
 
         const wall3 = new THREE.Mesh(wallGeometry,wallMaterial);
-        wall3.scale.set(0.3,2,3);
-        wall3.position.set(5,1.5,-1.5);
-        wall3.rotation.set(Math.PI/2,0,0);
+        wall3.scale.set(0.3,1.5,3);
+        wall3.position.set(5,1,-1.5);
+        wall3.rotation.set(Math.PI/2,Math.PI/2,,0);
         scene.add(wall3);
 
         const wall4 = new THREE.Mesh(wallGeometry,wallMaterial);
-        wall4.scale.set(0.3,2,3);
-        wall4.position.set(-5,1.5,-1.5);
-        wall4.rotation.set(0,Math.PI/2,0);
+        wall4.scale.set(0.3,1.5,3);
+        wall4.position.set(-5,1,-1.5);
+        wall4.rotation.set(Math.PI/2,Math.PI/2,0);
         scene.add(wall4);
 
         //犬作成
