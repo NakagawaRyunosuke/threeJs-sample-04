@@ -77,7 +77,7 @@
         //塀作成
         const wallTextureLoder = new THREE.TextureLoader();
         const wallTexture = wallTextureLoder.load("img/block.jpeg");
-        const wallGeometry1 = new THREE.BoxGeometry(3,3,32);
+        const wallGeometry1 = new THREE.BoxGeometry(1,1,1);
         const wallMaterial1 = new THREE.MeshLambertMaterial({transparent:true,map:wallTexture,side:THREE.DoubleSide});
         const wall1 = new THREE.Mesh(wallGeometry1,wallMaterial1);
         wall1.scale.set(1,1,0.5);
