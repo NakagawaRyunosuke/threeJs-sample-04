@@ -59,31 +59,14 @@
         //床作成
         const groundTextureLoader = new THREE.TextureLoader();
         const groundTexture = groundTextureLoader.load("img/ground.jpeg");
-        const geometry = new THREE.PlaneGeometry( 10, 10, 32 );
+        const geometry = new THREE.PlaneGeometry( 10, 50, 32 );
         const material = new THREE.MeshBasicMaterial( {map:groundTexture, side: THREE.DoubleSide} );
         const plane = new THREE.Mesh( geometry, material );
         plane.rotation.set(Math.PI/2,0,0);
         plane.position.set(0,-0.5,0);
         scene.add( plane );
 
-        //犬作成
-        const dogTextureLoader = new THREE.TextureLoader();
-        const dogTexture = dogTextureLoader.load("img/inu.png");
-        const dogMaterial = new THREE.SpriteMaterial({map:dogTexture});
-        const dog = new THREE.Sprite(dogMaterial);
-        dog.scale.set(3,2,2);
-        dog.position.set(0,0.3,0);
-        scene.add(dog);
 
-        //犬小屋作成
-        const homeTextureLoader = new THREE.TextureLoader();
-        const homeTexture = homeTextureLoader.load("img/woodHome.jpeg");
-        const homeGeometry = new THREE.BoxGeometry( 2, 2, 2 );
-        const homeMaterial = new THREE.MeshBasicMaterial( {map: homeTexture} );
-        const home = new THREE.Mesh( homeGeometry, homeMaterial );
-        home.position.set(3,0.5,-2);
-        scene.add( home );
-                
 
         update();
 
@@ -92,7 +75,7 @@
           // レンダリング
           renderer.render(scene, camera);
           requestAnimationFrame(update);
-          dog.position.x += 0.05;
+          dog.position.z += 0.05;
         }
       }
     </script>
