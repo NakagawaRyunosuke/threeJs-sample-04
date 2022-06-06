@@ -38,10 +38,10 @@
         let moveX = 0;
         const camera = new THREE.PerspectiveCamera(45, width / height);
         // カメラの初期座標を設定
-        camera.position.set(moveX, -0.5, moveZ);
+        camera.position.set(moveX, -0.2, moveZ);
 
         // カメラコントローラーを作成
-        //const controls = new THREE.OrbitControls(camera, document.body); 
+        const controls = new THREE.OrbitControls(camera, document.body); 
         
         // 平行光源1
         var directionalLight1 = new THREE.DirectionalLight(0xffffff);
@@ -109,6 +109,7 @@
           requestAnimationFrame(update);
 
           camera.position.z = moveZ;
+          camera.position.x = moveX;
         }
       }
     </script>
