@@ -32,7 +32,7 @@
         // カメラを作成
         const camera = new THREE.PerspectiveCamera(45, width / height);
         // カメラの初期座標を設定
-        camera.position.set(0, 8, 10);
+        camera.position.set(1, 8, 10);
 
         // カメラコントローラーを作成
         const controls = new THREE.OrbitControls(camera, document.body); 
@@ -91,12 +91,12 @@
 
         const wall3 = new THREE.Mesh(wallGeometry,wallMaterial);
         wall3.scale.set(0.3,1.5,5);
-        wall3.position.set(5,1,-1.5);
+        wall3.position.set(4.5,1,-2);
         scene.add(wall3);
 
         const wall4 = new THREE.Mesh(wallGeometry,wallMaterial);
         wall4.scale.set(0.3,1.5,5);
-        wall4.position.set(-5,1,-1.5);
+        wall4.position.set(-4.5,1,-2);
         scene.add(wall4);
 
         //犬作成
