@@ -72,13 +72,13 @@
         const dogMaterial = new THREE.SpriteMaterial({map:dogTexture});
         const dog = new THREE.Sprite(dogMaterial);
         dog.scale.set(3,2,2);
-        dog.position.set(0,0.05,0);
+        dog.position.set(0,0.08,0);
         scene.add(dog);
 
         //犬小屋作成
         const homeTextureLoader = new THREE.TextureLoader();
         const homeTexture = homeTextureLoader.load("img/woodHome.jpeg");
-        const homeGeometry = new THREE.BoxGeometry( 1, 1, 1 );
+        const homeGeometry = new THREE.BoxGeometry( 2, 2, 2 );
         const homeMaterial = new THREE.MeshBasicMaterial( {map: homeTexture} );
         const home = new THREE.Mesh( homeGeometry, homeMaterial );
         home.position.set(3,0.05,-2);
