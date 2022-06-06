@@ -32,7 +32,7 @@
         // カメラを作成
         const camera = new THREE.PerspectiveCamera(45, width / height);
         // カメラの初期座標を設定
-        camera.position.set(1, 8, 10);
+        camera.position.set(1, 8, 9);
 
         // カメラコントローラーを作成
         const controls = new THREE.OrbitControls(camera, document.body); 
@@ -73,6 +73,15 @@
         home.scale.set(3,3,1);
         home.position.set(0,6.9,-5); //位置を指定
         scene.add(home);
+
+        //門扉作成
+        const doorTextureLoader = new THREE.TextureLoader();
+        const doorTexture = doorTextureLoader.load("img/monpi.png");
+        const doorGeometry = new THREE.PlaneGeometry(3,4,32);
+        const doorMaterial = new THREE.MeshLambertMaterial({transparent:true,map:doorTexture,side:THREE.DoubleSide});
+        const door = new THREE.Mesh(doorGeometry,doorMaterial);
+        door.position.set(0,1,0);
+        scene.add(door);
 
         //塀作成
         const wallTextureLoder = new THREE.TextureLoader();
