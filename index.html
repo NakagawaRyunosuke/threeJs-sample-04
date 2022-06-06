@@ -41,7 +41,7 @@
         camera.position.set(moveX, -0.2, moveZ);
 
         // カメラコントローラーを作成
-        const controls = new THREE.OrbitControls(camera, document.body); 
+        //const controls = new THREE.OrbitControls(camera, document.body); 
         
         // 平行光源1
         var directionalLight1 = new THREE.DirectionalLight(0xffffff);
@@ -83,7 +83,7 @@
           sprite.position.y = 0;
           sprite.position.z = 5 * (Math.random() - 0.5);
           // スケールを調整
-          sprite.scale.set(1, 1, 1);
+          sprite.scale.set(3, 3, 3);
 
           scene.add(sprite);
         }
