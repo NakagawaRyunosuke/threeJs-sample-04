@@ -66,6 +66,14 @@
         plane.position.set(0,-0.5,0);
         scene.add( plane );
 
+        //家作成
+        const homeTextureLoader = new THREE.TextureLoader();
+        const homeTexture = homeTextureLoader.load("img/home.png");
+        const homeMaterial = new THREE.SpriteMaterial({ map: texture,});
+        const home = new THREE.Sprite(material);
+        home.scale.set(8,8,1);
+        home.position.set(0,0,-10); //位置を指定
+        home.add(home);
         //犬作成
         const dogTextureLoader = new THREE.TextureLoader();
         const dogTexture = dogTextureLoader.load("img/inu.png");
