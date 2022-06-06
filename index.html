@@ -12,7 +12,6 @@
     <button id="btn">↑</button>
     <script>
       // ページの読み込みを待つ
-      let z = 0;
       window.addEventListener('DOMContentLoaded', init);
 
       function init() {
@@ -32,13 +31,10 @@
         const scene = new THREE.Scene();
 
         // カメラを作成
+        let moveZ = 3;
         const camera = new THREE.PerspectiveCamera(45, width / height);
         // カメラの初期座標を設定
-        camera.position.set(0, 0, 3);
-        
-        document.getElementById("btn").addEventListener("click",function(){
-            camera.position.z -= 0.5;
-        });
+        camera.position.set(0, 0, moveZ);
 
         // カメラコントローラーを作成
         const controls = new THREE.OrbitControls(camera, document.body); 
@@ -87,8 +83,10 @@
 
           scene.add(sprite);
         }
-
         
+        document.getElementById("btn").addEventListener("click",function(){
+            moveZ -= 0.5;
+        });
         update();
 
         // 毎フレーム時に実行されるループイベントです
@@ -96,6 +94,8 @@
           // レンダリング
           renderer.render(scene, camera);
           requestAnimationFrame(update);
+
+          camera.position.z = moveZ;
         }
       }
     </script>
