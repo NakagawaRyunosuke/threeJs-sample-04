@@ -91,17 +91,19 @@
           // レンダリング
           renderer.render(scene, camera);
           requestAnimationFrame(update);
+          
           moveFlag = flagChange(dog,moveFlag);
+          console.log(moveFlag)
           dogMove(dog,moveFlag);
         }
       }
       function flagChange(dog,moveFlag){
-          console.log(dog.position.x)
+          
           if(Math.floor(dog.position.x) == 4){
               return false;
           }
           else if(Math.floor(dog.position.x) == -4){
-              console.log("ok")
+          
               return true;
           }
       }
