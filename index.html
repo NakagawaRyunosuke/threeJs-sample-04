@@ -70,7 +70,7 @@
         const homeGeometry = new THREE.PlaneGeometry(5,5,32);
         const homeMaterial = new THREE.MeshLambertMaterial({transparent: true,map:homeTexture});
         const home = new THREE.Mesh(homeGeometry,homeMaterial);
-        home.scale.set(3,5,1);
+        home.scale.set(3,3,1);
         home.position.set(0,5.5,-5); //位置を指定
         scene.add(home);
 
@@ -91,19 +91,16 @@
           // レンダリング
           renderer.render(scene, camera);
           requestAnimationFrame(update);
-          flagChange(dog,moveFlag);
+          moveFlag = flagChange(dog,moveFlag);
           dogMove(dog,moveFlag);
         }
       }
       function flagChange(dog,moveFlag){
-          
           if(Math.floor(dog.position.x) == 4){
-              moveFlag = false;
-              console.log("ok")
+              return false;
           }
           else if(Math.floor(dog.position.x) == -4){
-              moveFlag = true;
-              console.log("no")
+              return true;
           }
       }
 
