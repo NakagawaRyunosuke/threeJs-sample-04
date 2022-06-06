@@ -68,7 +68,7 @@
         const material = new THREE.MeshBasicMaterial( {map:groundTexture, side: THREE.DoubleSide} );
         const plane = new THREE.Mesh( geometry, material );
         plane.rotation.set(Math.PI/2,0,0);
-        plane.position.set(0,-1,0);
+        plane.position.set(0,-0.5,0);
         scene.add( plane );
 
         // 森を作成
