@@ -73,7 +73,7 @@
         const homeMaterial = new THREE.MeshLambertMaterial({transparent: true,map:homeTexture});
         const home = new THREE.Mesh(homeGeometry,homeMaterial);
         home.scale.set(1,1,1);
-        home.position.set(0,1,-5); //位置を指定
+        home.position.set(0,2,-5); //位置を指定
         scene.add(home);
 
         //犬作成
@@ -82,7 +82,7 @@
         const dogMaterial = new THREE.SpriteMaterial({map:dogTexture});
         const dog = new THREE.Sprite(dogMaterial);
         dog.scale.set(3,2,2);
-        dog.position.set(0,0.3,-8);
+        dog.position.set(0,0.3,-1);
         scene.add(dog);
 
 
