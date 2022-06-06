@@ -76,10 +76,10 @@
         for(let i = 0; i < 5; i++){
             const eyeTxtureLoader = new THREE.TextureLoader();
             const eyeTexture = textureLoader.load("img/eye.jpeg");
-            const eyeMaterial = new THREE.SpriteMaterial( {map: texture} );
+            const eyeMaterial = new THREE.SpriteMaterial( {map: eyeTexture} );
             const sphere = new THREE.Sprite( eyeMaterial );
             sphere.position.x = 2.5 * (Math.random() - 0.5); 
-            sphere.position.y = 2.5 * (Math.random() - 0.5);
+            sphere.position.y = (Math.random() - 0.5);
             sphere.position.z = 2.5 * (Math.random() - 0.5);
             sphere.scale.set(0.25,0.25,0.25);
             scene.add( sphere );
