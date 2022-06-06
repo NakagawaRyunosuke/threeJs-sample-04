@@ -77,11 +77,11 @@
         //塀作成
         const wallTextureLoder = new THREE.TextureLoader();
         const wallTexture = wallTextureLoder.load("img/block.jpeg");
-        const wallGeometry1 = new THREE.BoxGeometry(1,1,1);
+        const wallGeometry1 = new THREE.BoxGeometry(1,2,1);
         const wallMaterial1 = new THREE.MeshLambertMaterial({transparent:true,map:wallTexture,side:THREE.DoubleSide});
         const wall1 = new THREE.Mesh(wallGeometry1,wallMaterial1);
-        wall1.scale.set(1,1,0.5);
-        wall1.position.set(0,0,0);
+        wall1.scale.set(3,1,0.3);
+        wall1.position.set(-5,0,0);
         scene.add(wall1);
 
         //犬作成
