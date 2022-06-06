@@ -72,8 +72,13 @@
         const dogMaterial = new THREE.SpriteMaterial({map:dogTexture});
         const dog = new THREE.Sprite(dogMaterial);
         dog.scale.set(3,2,2);
-        dog.position.set(0,0.2,0);
+        dog.position.set(0,0,0);
         scene.add(dog);
+
+        //犬小屋作成
+        const homeTextureLoader = new TRHEE.TextureLoader();
+        const homeTexture = homeTextureLoader.load();
+        const homeMaterial = new THREE.
         
 
         update();
