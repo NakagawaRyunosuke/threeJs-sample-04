@@ -30,11 +30,9 @@
         const scene = new THREE.Scene();
 
         // カメラを作成
-        let moveZ = 5;
-        let moveX = 0;
         const camera = new THREE.PerspectiveCamera(45, width / height);
         // カメラの初期座標を設定
-        camera.position.set(moveX, -0.2, moveZ);
+        camera.position.set(0, -0.2, 7);
 
         // カメラコントローラーを作成
         const controls = new THREE.OrbitControls(camera, document.body); 
@@ -98,6 +96,7 @@
         }
       }
       function flagChange(dog,moveFlag){
+          console.log(dog.position.x)
           if(Math.floor(dog.position.x) == 4){
               moveFlag = false;
           }
