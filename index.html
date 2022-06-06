@@ -85,7 +85,7 @@
         dog.position.set(0,0.3,-3);
         scene.add(dog);
 
-
+        let moveFlag = true;
         update();
 
         // 毎フレーム時に実行されるループイベントです
@@ -93,6 +93,24 @@
           // レンダリング
           renderer.render(scene, camera);
           requestAnimationFrame(update);
+          flagChange(dog,moveFlag);
+          dogMove(dog,moveFlag);
+        }
+      }
+      function flagChange(dog,moveFlag){
+          if(Math.floor(dog.position.x) == 4){
+              moveFlag = false;
+          }
+          else if(Math.floor(dog.position.x) == -4){
+              moveFlag = true;
+          }
+      }
+
+      function dogMove(dog,moveFlag){
+        if(moveFlag){
+            dog.position.x += 0.5;
+        }else{
+            dog.position.x -= 0.5;
         }
       }
     </script>
