@@ -68,11 +68,21 @@
         const homeTextureLoader = new THREE.TextureLoader();
         const homeTexture = homeTextureLoader.load("img/home.png");
         const homeGeometry = new THREE.PlaneGeometry(5,5,32);
-        const homeMaterial = new THREE.MeshLambertMaterial({transparent: true,map:homeTexture});
+        const homeMaterial = new THREE.MeshLambertMaterial({transparent: true,map:homeTexture,side: THREE.DoubleSide});
         const home = new THREE.Mesh(homeGeometry,homeMaterial);
         home.scale.set(3,3,1);
         home.position.set(0,6.9,-5); //位置を指定
         scene.add(home);
+
+        //塀作成
+        const wallTextureLoder = new THREE.TextureLoader();
+        const wallTexture = wallTextureLoder.load("img/block.jpeg");
+        const wallGeometry1 = new THREE.BoxGeometry(3,3,32);
+        const wallMaterial1 = new THREE.MeshLambertMaterial({transparent:true,map:wallTexture,side:THREE.DoubleSide});
+        const wall1 = new THREE.Mesh(wallGeometry1,wallMaterial1);
+        wall1.scale.set(3,1,0.3);
+        wall1.position.set(5,0,0);
+        scene.add(wall1);
 
         //犬作成
         const dogTextureLoader = new THREE.TextureLoader();
