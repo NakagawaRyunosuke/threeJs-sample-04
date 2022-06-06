@@ -13,7 +13,7 @@
     <script>
       // ページの読み込みを待つ
       let z = 5;
-      window.addEventListener('DOMContentLoaded', init(x));
+      window.addEventListener('DOMContentLoaded', init(z));
       
 
         document.getElementById("btn").addEventListener("click",function(){
@@ -96,7 +96,7 @@
             const eyeMaterial = new THREE.SpriteMaterial( {map: eyeTexture} );
             const sphere = new THREE.Sprite( eyeMaterial );
             sphere.position.x = 3.5 * (Math.random() - 0.5); 
-            sphere.position.y = (Math.random() * 0.5);
+            sphere.position.y = (Math.random() - 0.5);
             sphere.position.z = 3.5 * (Math.random() - 0.5);
             sphere.scale.set(0.25,0.25,0.25);
             scene.add( sphere );
