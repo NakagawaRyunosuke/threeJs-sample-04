@@ -9,7 +9,10 @@
 <body>
     <h1></h1>
     <p></p>
-    <button id="btn">↑</button>
+    <button id="gobtn">↑</button>
+    <button id="backbtn">↓</button>
+    <button id="leftbtn">←</button>
+    <button id="rightbtn">→</button>
     <script>
       // ページの読み込みを待つ
       window.addEventListener('DOMContentLoaded', init);
@@ -32,12 +35,13 @@
 
         // カメラを作成
         let moveZ = 3;
+        let moveX = 0;
         const camera = new THREE.PerspectiveCamera(45, width / height);
         // カメラの初期座標を設定
-        camera.position.set(0, 0, moveZ);
+        camera.position.set(moveX, -0.5, moveZ);
 
         // カメラコントローラーを作成
-        const controls = new THREE.OrbitControls(camera, document.body); 
+        //const controls = new THREE.OrbitControls(camera, document.body); 
         
         // 平行光源1
         var directionalLight1 = new THREE.DirectionalLight(0xffffff);
@@ -84,8 +88,17 @@
           scene.add(sprite);
         }
         
-        document.getElementById("btn").addEventListener("click",function(){
+        document.getElementById("gobtn").addEventListener("click",function(){
             moveZ -= 0.5;
+        });
+        document.getElementById("backbtn").addEventListener("click",function(){
+            moveZ += 0.5;
+        });
+        document.getElementById("leftbtn").addEventListener("click",function(){
+            moveX -= 0.5;
+        });
+        document.getElementById("rightbtn").addEventListener("click",function(){
+            moveX += 0.5;
         });
         update();
 
