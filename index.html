@@ -66,6 +66,14 @@
         plane.position.set(0,-0.5,0);
         scene.add( plane );
 
+        //犬作成
+        const dogTextureLoader = new THREE.TextureLoader();
+        const dogTexture = dogTextureLoader.load("img/inu.png");
+        const dogMaterial = new THREE.SpriteMaterial({map:dogTexture});
+        const dog = new THREE.Sprite(dogMaterial);
+        dog.scale.set(3,2,2);
+        dog.position.set(0,0.3,-10);
+        scene.add(dog);
 
 
         update();
