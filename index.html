@@ -7,8 +7,8 @@
     <title>sample8</title>
 </head>
 <body>
-    <h1></h1>
-    <p></p>
+    <h1>家の前を通るたびに吠えてくる犬</h1>
+    <p>犬をビルボードで作成し、警戒してこちらから目を離さないところを表現しました。</p>
     <script>
       // ページの読み込みを待つ
       window.addEventListener('DOMContentLoaded', init);
@@ -92,7 +92,7 @@
         const wall3 = new THREE.Mesh(wallGeometry,wallMaterial);
         wall3.scale.set(0.3,1.5,3);
         wall3.position.set(5,1,-1.5);
-        wall3.rotation.set(Math.PI/2,Math.PI/2,0);
+        wall3.rotation.set(0,0,Math.PI/2);
         scene.add(wall3);
 
         const wall4 = new THREE.Mesh(wallGeometry,wallMaterial);
