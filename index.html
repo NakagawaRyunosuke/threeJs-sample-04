@@ -75,7 +75,7 @@
         //目を作成
         for(let i = 0; i < 5; i++){
             const eyeTxtureLoader = new THREE.TextureLoader();
-            const eyeTexture = textureLoader.load("img/eye.jpeg");
+            const eyeTexture = textureLoader.load("img/eye.png");
             const eyeMaterial = new THREE.SpriteMaterial( {map: eyeTexture} );
             const sphere = new THREE.Sprite( eyeMaterial );
             sphere.position.x = 2.5 * (Math.random() - 0.5); 
