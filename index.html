@@ -71,7 +71,7 @@
         const homeMaterial = new THREE.MeshLambertMaterial({transparent: true,map:homeTexture});
         const home = new THREE.Mesh(homeGeometry,homeMaterial);
         home.scale.set(3,3,1);
-        home.position.set(0,6.8,-5); //位置を指定
+        home.position.set(0,6.9,-5); //位置を指定
         scene.add(home);
 
         //犬作成
@@ -81,6 +81,7 @@
         const dog = new THREE.Sprite(dogMaterial);
         dog.scale.set(3,2,2);
         dog.position.set(0,0.3,-3);
+        dog.renderOrder = 1;
         scene.add(dog);
 
         let moveFlag = true;
@@ -112,9 +113,9 @@
 
       function dogMove(dog,moveFlag){
         if(moveFlag){
-            dog.position.x += 0.05;
+            dog.position.x += 0.1;
         }else{
-            dog.position.x -= 0.05;
+            dog.position.x -= 0.1;
         }
       }
     </script>
