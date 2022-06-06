@@ -73,7 +73,8 @@
         const home = new THREE.Sprite(homeMaterial);
         home.scale.set(8,8,1);
         home.position.set(0,0,-10); //位置を指定
-        home.add(home);
+        scene.add(home);
+
         //犬作成
         const dogTextureLoader = new THREE.TextureLoader();
         const dogTexture = dogTextureLoader.load("img/inu.png");
