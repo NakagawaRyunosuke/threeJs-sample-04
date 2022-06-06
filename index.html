@@ -96,9 +96,10 @@
         }
       }
       function flagChange(dog,moveFlag){
-          console.log(dog.position.x)
+          
           if(Math.floor(dog.position.x) == 4){
               moveFlag = false;
+              console.log("ok")
           }
           else if(Math.floor(dog.position.x) == -4){
               moveFlag = true;
