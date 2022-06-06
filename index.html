@@ -60,7 +60,7 @@
         // 木をスプライトで作成
           var textureLoader = new THREE.TextureLoader();  
           const rand = Math.floor(Math.random()*4);
-          var texture = textureLoader.load("img/tree"+String(randnd)+".png");
+          var texture = textureLoader.load("img/tree"+String(rand)+".png");
           const material = new THREE.SpriteMaterial({ map: texture,});
           const sprite = new THREE.Sprite(material);
           // ランダムな座標に配置
