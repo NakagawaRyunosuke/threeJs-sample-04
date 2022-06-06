@@ -77,10 +77,11 @@
         //門扉作成
         const doorTextureLoader = new THREE.TextureLoader();
         const doorTexture = doorTextureLoader.load("img/monpi.png");
-        const doorGeometry = new THREE.PlaneGeometry(3,4,32);
+        const doorGeometry = new THREE.PlaneGeometry(10,5,32);
         const doorMaterial = new THREE.MeshLambertMaterial({transparent:true,map:doorTexture,side:THREE.DoubleSide});
         const door = new THREE.Mesh(doorGeometry,doorMaterial);
         door.position.set(0,1,0);
+        door.renderOrder = 1;
         scene.add(door);
 
         //塀作成
