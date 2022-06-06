@@ -59,7 +59,7 @@
         //床作成
         const groundTextureLoader = new THREE.TextureLoader();
         const groundTexture = groundTextureLoader.load("img/ground.jpeg");
-        const geometry = new THREE.PlaneGeometry( 10, 50, 32 );
+        const geometry = new THREE.PlaneGeometry( 10, 10, 32 );
         const material = new THREE.MeshBasicMaterial( {map:groundTexture, side: THREE.DoubleSide} );
         const plane = new THREE.Mesh( geometry, material );
         plane.rotation.set(Math.PI/2,0,0);
@@ -83,7 +83,6 @@
           // レンダリング
           renderer.render(scene, camera);
           requestAnimationFrame(update);
-          dog.position.z += 0.05;
         }
       }
     </script>
