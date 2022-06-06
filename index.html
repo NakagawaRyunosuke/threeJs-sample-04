@@ -77,9 +77,13 @@
 
         //犬小屋作成
         const homeTextureLoader = new TRHEE.TextureLoader();
-        const homeTexture = homeTextureLoader.load();
-        const homeMaterial = new THREE.
-        
+        const homeTexture = homeTextureLoader.load("img/woodHome.jpeg");
+        const homeGeometry = new THREE.BoxGeometry( 1, 1, 1 );
+        const homeMaterial = new THREE.MeshBasicMaterial( {map: homeTexture} );
+        const home = new THREE.Mesh( homeGeometry, homeMaterial );
+        home.position.set(1,0,1);
+        scene.add( home );
+                
 
         update();
 
