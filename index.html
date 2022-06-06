@@ -70,7 +70,7 @@
         const homeTextureLoader = new THREE.TextureLoader();
         const homeTexture = homeTextureLoader.load("img/home.png");
         const homeMaterial = new THREE.SpriteMaterial({ map: homeTexture,});
-        const home = new THREE.Sprite(material);
+        const home = new THREE.Sprite(homeMaterial);
         home.scale.set(8,8,1);
         home.position.set(0,0,-10); //位置を指定
         home.add(home);
