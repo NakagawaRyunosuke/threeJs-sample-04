@@ -65,12 +65,24 @@
           const sprite = new THREE.Sprite(material);
           // ランダムな座標に配置
           sprite.position.x = 2 * (Math.random() - 0.5);
-          sprite.position.y = 0.5 * Math.random();
           sprite.position.z = 2 * (Math.random() - 0.5);
           // スケールを調整
           sprite.scale.set(0.5, 0.5, 0.5);
 
           scene.add(sprite);
+        }
+
+        //目を作成
+        for(let i = 0; i < 5; i++){
+            const eyeTxtureLoader = new THREE.TextureLoader();
+            const eyeTexture = textureLoader.load("img/eye.jpeg");
+            const eyeMaterial = new THREE.SpriteMaterial( {map: texture} );
+            const sphere = new THREE.Sprite( eyeMaterial );
+            sphere.position.x = 2.5 * (Math.random() - 0.5); 
+            sphere.position.y = 2.5 * (Math.random() - 0.5);
+            sphere.position.z = 2.5 * (Math.random() - 0.5);
+            sphere.scale.set(0.25,0.25,0.25);
+            scene.add( sphere );
         }
         
         update();
