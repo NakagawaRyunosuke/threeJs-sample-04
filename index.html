@@ -23,7 +23,7 @@
         document.body.appendChild(renderer.domElement);
         renderer.setSize(width, height);
         // 背景の色を設定
-        renderer.setClearColor(0xffffdd);
+        renderer.setClearColor(0x993333);
 
 
         // シーンを作成
@@ -78,9 +78,9 @@
             const eyeTexture = textureLoader.load("img/eye.png");
             const eyeMaterial = new THREE.SpriteMaterial( {map: eyeTexture} );
             const sphere = new THREE.Sprite( eyeMaterial );
-            sphere.position.x = 2.5 * (Math.random() - 0.5); 
-            sphere.position.y = (Math.random() - 0.5);
-            sphere.position.z = 2.5 * (Math.random() - 0.5);
+            sphere.position.x = 2.5 * (Math.random() * 0.5); 
+            sphere.position.y = (Math.random() * 0.5);
+            sphere.position.z = 2.5 * (Math.random() * 0.5);
             sphere.scale.set(0.25,0.25,0.25);
             scene.add( sphere );
         }
