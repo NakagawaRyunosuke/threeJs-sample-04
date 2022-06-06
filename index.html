@@ -70,7 +70,7 @@
         const homeTextureLoader = new THREE.TextureLoader();
         const homeTexture = homeTextureLoader.load("img/home.png");
         const homeGeometry = new THREE.PlaneGeometry(5,5,32);
-        const homeMaterial = new THREE.MeshBasicMaterial({ map: homeTexture,});
+        const homeMaterial = new THREE.MeshLambertMaterial({transparent: true,map:homeTexture});
         const home = new THREE.Mesh(homeGeometry,homeMaterial);
         home.scale.set(1,1,1);
         home.position.set(0,1,-5); //位置を指定
